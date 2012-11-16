@@ -40,11 +40,18 @@ $(document).ready(function() {
 		// Update the D3 graph too:
 		yearIndex = ix;
 		updateD3();
+		updateInfo.call($('#yearBars .selected'));
 	});
 
 	var info = $('#info-dom');
 
+	$('#yearBars .yearBar').click(updateInfo);
 	$('#yearBars .yearBar').click(function() {
+		yearIndex = $(this).index();
+		updateD3();
+	});
+	
+	function updateInfo() {
 		var year = $('.year', this).text();
 		var yearData = _.find(data, function(d) { return d.year == year; });
 		var newInfo = info.clone();
@@ -77,6 +84,5 @@ $(document).ready(function() {
 				}
 			}
 		});
-	});
-	
+	}
 });
