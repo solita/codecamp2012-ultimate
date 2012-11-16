@@ -3,6 +3,8 @@ var site = 'http://www.cs.tut.fi/~juhakn/saa_ka_';
 var years = _.range(1997, 2013)
 var months = _.range(1, 13);
 
+var monthNames = ['', 'Tammikuu', 'Helmikuu', 'Maaliskuu', 'Huhtikuu', 'Toukokuu', 'Kesäkuu', 'Heinäkuu', 'Elokuu', 'Syyskuu', 'Lokakuu', 'Marraskuu', 'Joulukuu'];
+
 function yearUrl(year) {
 	return site + year + '.html'
 };
