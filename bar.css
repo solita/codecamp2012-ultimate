@@ -52,3 +52,11 @@
 	width: 8%;
 	padding-left: 3px;
 }
+
+.foobar {
+	border: 1px solid lightblue;
+}
+.foobar .label {
+	color: green;
+	margin-left: 20px;
+}

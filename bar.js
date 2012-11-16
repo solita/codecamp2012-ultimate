@@ -41,6 +41,7 @@ $(document).ready(function() {
 		yearIndex = ix;
 		updateD3();
 		updateInfo.call($('#yearBars .selected'));
+		updateSquares(years[yearIndex]);
 	});
 
 	var info = $('#info-dom');
@@ -48,6 +49,7 @@ $(document).ready(function() {
 	$('#yearBars .yearBar').click(updateInfo);
 	$('#yearBars .yearBar').click(function() {
 		yearIndex = $(this).index();
+		updateSquares(years[yearIndex]);
 		updateD3();
 	});
 	
@@ -85,4 +87,20 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$('body').append('<div id="foobar" style="position: relative; margin-top: 75px"></div>');
+	updateSquares(years[0]);
 });
+
+function updateSquares(year) {
+	var yearData = _.find(data, function(d) { return d.year == year; });
+	var all = _.flatten(_.map(yearData.months, function(m) { return _.map(m.data, function(d){ return parseFloat(d.ka); });}));
+console.log(yearData);
+	var grouped = _.groupBy(all, Math.floor);
+
+	var foobar = $('body').find('#foobar');
+	foobar.empty();
+	_.each(grouped, function(k, v) {
+		foobar.append('<div class="foobar" style="background-color: blue; position: absolute; left:' + (Math.random()*1000) + 'px; top:' + (Math.random()*300) + '; width: ' + v + 'px; height: ' + v +'px"><div class="label">' + v + '°C</div></div>');
+	});
+};
