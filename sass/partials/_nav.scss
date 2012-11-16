@@ -1,0 +1,22 @@
+
+.main-nav {
+    background:#eee;
+    padding-left:5px;
+    width:100%;
+}
+.main-nav a {
+    border:0;
+    padding:$baseline/2 10px;
+}
+.main-nav .act a {
+    color: $color-text;
+    font-weight:700;
+}
+
+
+.breadcrumb li:before {
+    content:"» "
+}
+.breadcrumb li:first-child:before {
+    content:normal;
+}
