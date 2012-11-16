@@ -35,6 +35,11 @@ $(document).ready(function() {
 				sel.addClass('selected');
 			}
 		}
+		// "reverse" index of selected:
+		var ix = 16 - $('#yearBars .selected').index();
+		// Update the D3 graph too:
+		yearIndex = ix;
+		updateD3();
 	});
 
 	var info = $('#info-dom');
