@@ -1,0 +1,25 @@
+
+html {
+    background:#fff;
+    -webkit-font-smoothing: antialiased;
+
+    /* Inflate text size on mobiles by full increments only */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* Sam's Grid System: http://samsoff.es/posts/my-grid-system */
+/* Implemented using Frameless Grid */
+.wrapper, .row {
+    overflow: hidden;
+    margin:0 auto;
+    max-width: $cols10;
+}
+.row > div {
+    float:right;
+    width: $cols5;
+}
+.row > div:first-child {
+    float:left;
+}
+
