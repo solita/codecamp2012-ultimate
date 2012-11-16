@@ -144,39 +144,36 @@
 	    }
 	}
 }
-/*
+
 .yearBars {
 	height: 15em;
 	float: right;
+}
 
-	.yearBar {
-		float: left;
-		width: 40px;
-		margin-right: 2px;
-		background-color: red; 
-		position: relative;
+.yearBar {
+	float: left;
+	width: 40px;
+	margin-right: 2px;
+	background-color: red; 
+	position: relative;
+
+	&:hover,
+	.selected {
+		border: 1px solid gray;
+		background-color: #3CC;
 
 		.temp {
-			display: none;
-			font-size: 0.7em;
-		}
-
-		:hover,
-		.selected {
-			border: 1px solid gray;
-			background-color: #3CC;
-
-			.temp {
-				display: block;
-				position: absolute;
-				bottom: 0;
-			}
+			display: block;
+			position: absolute;
+			bottom: 0;
 		}
 	}
+
+	.temp {
+		display: none;
+		font-size: 0.7em;
+	}
 }
-*/
-
-
 
 
 /* ALL THE REST
