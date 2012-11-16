@@ -13,8 +13,13 @@ function monthUrl(year, month) {
 	return site + month + year + '.html'
 };
 
+var data;
+
 $(document).ready(function() {
-	
+	if ($('#data *').length == 0) {
+		loadData();
+	}
+	data = yearsToJson();
 });
 
 function loadData() {
@@ -45,5 +50,28 @@ function loadData() {
 	    	});
 		});
 	});
-	
-}
+};
+
+function yearsToJson() {
+	return _.map(years, function(year) {
+		return {'year': year,
+		 		'data': dataToJson('#data .y' + year + ' > .data'),
+		 		'months': monthsToJson(year)};
+	});
+};
+
+function monthsToJson(year) {
+	return _.map(months, function(month) {
+		return {'month': month, 'data': dataToJson('#data .y' + year + ' .m' + month + ' > .data')};
+	});
+};
+
+function dataToJson(data) {
+	return _.map($('tr:has(td)', data), function(tr){
+		return {'day': $($('td *', tr)[0]).text(),
+				'ka': $($('td *', tr)[1]).text(),
+				'min': $($('td *', tr)[2]).text(),
+				'max': $($('td *', tr)[3]).text()
+		};
+	});
+};
