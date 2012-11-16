@@ -34,3 +34,21 @@
 	position: absolute;
 	bottom: 0;
 }
+
+.d3chart {
+	float: right;
+}
+
+#info {
+	float: left;
+	margin-top: 45px;
+	font-size: 0.6em;
+	width: 98%;
+}
+
+#info .month {
+	float: left;
+	border-right: 1px solid red;
+	width: 8%;
+	padding-left: 3px;
+}

@@ -100,7 +100,7 @@
 
 
 .data {
-	display: block;
+	display: none;
 	width: 100px;
 	margin: 0 0px;
 
@@ -145,42 +145,6 @@
 	    	padding: 0 0px;
 		    background-color: white;
 	    }
-	}
-}
-
-.yearBars {
-	height: 10em;
-	float: right;
-	position: relative;
-
-	.title {
-		position: absolute;
-		left: 0;
-		top: 0;
-	}
-}
-
-.yearBar {
-	float: right;
-	width: 40px;
-	margin-right: 2px;
-	background-color: red; 
-	position: relative;
-
-	&:hover, .selected {
-		border: 1px solid gray;
-		background-color: #3CC;
-	}
-
-	.temp {
-		display: none;
-		font-size: 0.7em;
-	}
-
-	&:hover .temp, .selected .temp {
-		display: block;
-		position: absolute;
-		bottom: 0;
 	}
 }
 

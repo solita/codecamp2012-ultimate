@@ -35,14 +35,54 @@ $(document).ready(function() {
 				sel.addClass('selected');
 			}
 		}
+		// "reverse" index of selected:
+		var ix = 16 - $('#yearBars .selected').index();
+		// Update the D3 graph too:
+		yearIndex = ix;
+		updateD3();
+		updateInfo.call($('#yearBars .selected'));
 	});
 
-	var info = $('#info');
+	var info = $('#info-dom');
 
+	$('#yearBars .yearBar').click(updateInfo);
 	$('#yearBars .yearBar').click(function() {
-		var year = $('.year', this).text();
-		var yearData = _.find(data, function(d) { return d.year == year; });
-		info.render(yearData);
+		yearIndex = $(this).index();
+		updateD3();
 	});
 	
+	function updateInfo() {
+		var year = $('.year', this).text();
+		var yearData = _.find(data, function(d) { return d.year == year; });
+		var newInfo = info.clone();
+		$('#info').remove();
+		newInfo.attr('id', 'info');
+		$('#info-wrapper').prepend(newInfo);
+		newInfo.render(yearData, {
+			data: {
+				day: {
+					html: function(params) {
+						return '<strong>' + monthNames[parseInt(params.value)] + '</strong>';
+					}
+				},
+				ka: {
+					text: function(params) {
+						return 'ka: ' + params.value + '°C';
+					}
+				},
+				min: {
+					text: function(params) {
+						var temp = params.value.indexOf('(') != -1 ? params.value.substring(0, params.value.indexOf('(')) : params.value
+						return 'min: ' + temp + '°C';
+					}
+				},
+				max: {
+					text: function(params) {
+						var temp = params.value.indexOf('(') != -1 ? params.value.substring(0, params.value.indexOf('(')) : params.value
+						return 'max: ' + temp + '°C';
+					}
+				}
+			}
+		});
+	}
 });

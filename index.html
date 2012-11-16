@@ -10,12 +10,14 @@
 <script type="text/javascript" src="bar.js"></script>
 <script type="text/javascript" src="baz.js"></script>
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link rel="stylesheet" type="text/css" href="bar.css" />
 <title>Ultimate</title>
 </head>
 <body class="no-grid">
-  <div id="info">
+  <div id="info-wrapper">
+  <div id="info-dom">
     <div data-bind="data">
-      <div data-bind="month">
+      <div class="month">
         <div data-bind="day"></div>
         <div data-bind="ka"></div>
         <div data-bind="min"></div>
@@ -23,6 +25,11 @@
       </div>
     </div>
   </div>
+</div>
+
+ <div id="d3chart">
+ </div>
+
 <div class="main" role="main"><div class="wrapper">
   <div id="data" class="data">
   <div class="y1997"><div class="data">
@@ -91178,14 +91185,5 @@
   
 </div></div><div class="m12"><div class="data"></div></div></div></div></div></div>
 
-  <div id="testing">
-    <h1>hi</h1>
-    <button id="mybutton" type="button">Do something</button>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red"></circle>
-    </svg>
-
-    
-  </div>
 
 </body></html>
