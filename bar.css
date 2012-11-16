@@ -16,6 +16,8 @@
 	margin-right: 2px;
 	background-color: red; 
 	position: relative;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 
 .yearBar:hover,
@@ -41,7 +43,7 @@
 
 #info {
 	float: left;
-	margin-top: 45px;
+	margin-top: 70px;
 	font-size: 0.6em;
 	width: 98%;
 }
@@ -53,10 +55,18 @@
 	padding-left: 3px;
 }
 
+#foobar {
+	position: relative;
+	margin-top: 100px;
+}
+
 .foobar {
 	border: 1px solid lightblue;
+	border-radius: 5px;
+	position: relative;
 }
 .foobar .label {
 	color: green;
-	margin-left: 20px;
+	position: absolute;
+	right: -2em;
 }

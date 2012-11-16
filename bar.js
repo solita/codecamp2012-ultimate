@@ -88,7 +88,6 @@ $(document).ready(function() {
 		});
 	}
 
-	$('body').append('<div id="foobar" style="position: relative; margin-top: 75px"></div>');
 	updateSquares(years[0]);
 });
 
@@ -99,8 +98,8 @@ console.log(yearData);
 	var grouped = _.groupBy(all, Math.floor);
 
 	var foobar = $('body').find('#foobar');
-	foobar.empty();
+	foobar.find('div').remove();
 	_.each(grouped, function(k, v) {
-		foobar.append('<div class="foobar" style="background-color: blue; position: absolute; left:' + (Math.random()*1000) + 'px; top:' + (Math.random()*300) + '; width: ' + v + 'px; height: ' + v +'px"><div class="label">' + v + '°C</div></div>');
+		foobar.append('<div class="foobar" style="background-color: blue; position: absolute; left:' + (Math.random()*1200) + 'px; top:' + (Math.random()*300) + '; width: ' + v + 'px; height: ' + v +'px"><div class="label">' + v + '°C</div></div>');
 	});
 };

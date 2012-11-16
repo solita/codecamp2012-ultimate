@@ -6,4 +6,6 @@
   margin: 1px;
   color: white;
   height: 10px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
 }
