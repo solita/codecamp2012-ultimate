@@ -100,47 +100,50 @@
 
 
 .data {
-	display: none;
-	width: 0px;
+	display: block;
+	width: 100px;
+	margin: 0 0px;
 
 	p {
 		display: none;
 	}
 
+	table {
+		margin: 0 0px;
+	}
+
 	tbody {
-    	height: 1px;
+    	height: 0.1px;
+    	width: 100px;
+	    border-spacing: 0px;
 	    font-size: 0em;
 	}
 
 	tr {
-    	height: 1px;
-	    line-height: 1px;
-	    margin: 0 0px;
-	    border-spacing: 0px;
+	    th {
+	    	display: none;	    
+	    }
 
-	    th, td {
+	    td {
 	    	padding: 0 0px;
-	    	border-width: 0px;
+	    	display: none;
+	    }
 
-	    	p {
-	    		margin: 0 0 0px;
+	    td+td {
+	    	display: block;
+	    	padding: 0 0px;
+
+	    	p, div {
+			    background-color: blue;
+			    height: 1px;
+		    	margin: 0 auto;
 	    	}
 	    }
 
-	    th+th, td+td {
-	    	padding: 1 1px;
-
-	    	p {
-		    	font-size: 0,1em;
-	    	}
-	    }
-
-	    th+th+th, td+td+td {
+	    td+td+td {
+	    	display: none;
 	    	padding: 0 0px;
-
-	    	p {
-		    	font-size: 0em;
-	    	}
+		    background-color: white;
 	    }
 	}
 }
