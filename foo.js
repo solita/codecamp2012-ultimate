@@ -1,29 +1,36 @@
 var site = 'http://www.cs.tut.fi/~juhakn/saa_ka_';
 
 var years = _.range(1997, 2013)
-var months = _.map(_.range(1, 13), function(m) {
-	return m < 10 ? '0' + m : '' + m + ''
-});
+var months = _.range(1, 13);
 
 function yearUrl(year) {
 	return site + year + '.html'
 };
 
 function monthUrl(year, month) {
-	return site + month + year + '.html'
+	return site + (month < 10 ? '0' + month : '' + month + '') + year + '.html'
 };
 
 var data;
 
 $(document).ready(function() {
 	if ($('#data *').length == 0) {
-		loadData();
+		loadData(allToJson);
+	} else {
+		allToJson();
 	}
-	data = yearsToJson();
 });
 
-function loadData() {
-	_.each(years, function(year) {
+function allToJson() {
+	data = yearsToJson();
+}
+
+function loadData(cb) {
+	loadYear(years[0], cb);
+};
+
+function loadYear(year, cb) {
+	if (year < 2013) {
 		$.ajax({
 	    	url: yearUrl(year),
 	    	type: 'GET',
@@ -33,24 +40,32 @@ function loadData() {
 	    	    		  .append('<div class="data"></div>')
 	    	    		  .find('.data')
 	    	              .html(res.responseText);
+	    	    loadMonth(year, months[0], function() {loadYear(year+1);});
 	    	}
     	});
-
-    	_.each(months, function(month) {
-			$.ajax({
-		    	url: monthUrl(year, month),
-		    	type: 'GET',
-		    	success: function(res) {
-		    	    $('.y' + year).append('<div class="m' + month + '"></div>')
-		    	                  .find('.m' + month)
-		    	                  .append('<div class="data"></div>')
-	    	    		  		  .find('.data')
-		    	                  .html(res.responseText);
-		    	}
-	    	});
-		});
-	});
+	} else {
+		cb();
+	}
 };
+
+function loadMonth(year, month, cb) {
+	if (month < 13) {
+		$.ajax({
+	    	url: monthUrl(year, month),
+	    	type: 'GET',
+	    	success: function(res) {
+	    		$('.y' + year).append('<div class="m' + month + '"></div>')
+		                  .find('.m' + month)
+		                  .append('<div class="data"></div>')
+	    		  		  .find('.data')
+		                  .html(res.responseText);
+		        loadMonth(year, month+1, cb);
+	    	}
+		});
+	} else {
+		cb();
+	}
+}
 
 function yearsToJson() {
 	return _.map(years, function(year) {
