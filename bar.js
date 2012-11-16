@@ -13,6 +13,8 @@ $(document).ready(function() {
 		bars.append('<div class="yearBar" title="Vuosi ' + arr[0] + '" style="height: ' + (arr[1]) + 'em; margin-top: ' + (10-arr[1]) + 'em"><div class="year">' + arr[0] + '</div><div class="temp">' + ('' + arr[1]).substring(0, 4) + ' °C</div></div>');
 	});
 
+	$('#yearBars .yearBar').last().addClass('selected');
+
 	$('body').keydown(function(event) {
 		if (event.keyCode == 39) {
 			var selected = $('#yearBars .selected');
@@ -52,6 +54,8 @@ $(document).ready(function() {
 		updateSquares(years[yearIndex]);
 		updateD3();
 	});
+
+	updateInfo.call($('#yearBars .selected'));
 	
 	function updateInfo() {
 		var year = $('.year', this).text();
