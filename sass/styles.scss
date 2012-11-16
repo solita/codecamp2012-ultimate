@@ -101,7 +101,80 @@
 
 .data {
 	display: none;
+	width: 0px;
+
+	p {
+		display: none;
+	}
+
+	tbody {
+    	height: 1px;
+	    font-size: 0em;
+	}
+
+	tr {
+    	height: 1px;
+	    line-height: 1px;
+	    margin: 0 0px;
+	    border-spacing: 0px;
+
+	    th, td {
+	    	padding: 0 0px;
+	    	border-width: 0px;
+
+	    	p {
+	    		margin: 0 0 0px;
+	    	}
+	    }
+
+	    th+th, td+td {
+	    	padding: 1 1px;
+
+	    	p {
+		    	font-size: 0,1em;
+	    	}
+	    }
+
+	    th+th+th, td+td+td {
+	    	padding: 0 0px;
+
+	    	p {
+		    	font-size: 0em;
+	    	}
+	    }
+	}
 }
+
+.yearBars {
+	height: 15em;
+	float: right;
+}
+
+.yearBar {
+	float: left;
+	width: 40px;
+	margin-right: 2px;
+	background-color: red; 
+	position: relative;
+
+	&:hover,
+	.selected {
+		border: 1px solid gray;
+		background-color: #3CC;
+
+		.temp {
+			display: block;
+			position: absolute;
+			bottom: 0;
+		}
+	}
+
+	.temp {
+		display: none;
+		font-size: 0.7em;
+	}
+}
+
 
 /* ALL THE REST
 ----------------------------------------------------------------------------- */
