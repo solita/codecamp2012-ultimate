@@ -100,6 +100,6 @@ console.log(yearData);
 	var foobar = $('body').find('#foobar');
 	foobar.find('div').remove();
 	_.each(grouped, function(k, v) {
-		foobar.append('<div class="foobar" style="background-color: blue; position: absolute; left:' + (Math.random()*1200) + 'px; top:' + (Math.random()*300) + '; width: ' + v + 'px; height: ' + v +'px"><div class="label">' + v + '°C</div></div>');
+		foobar.append('<div class="foobar" style="left:' + (Math.random()*1200) + 'px; top:' + (Math.random()*300) + '; width: ' + v + 'px; height: ' + v +'px"><div class="label">' + v + '°C</div></div>');
 	});
 };
