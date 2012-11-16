@@ -1,9 +1,13 @@
+	
 $(document).ready(function() {
 
+	var yearIndex = 0;
+	var y = data[yearIndex];
+	var monthAvgs = _.map(y.data, function(x) { return parseFloat(x.ka); })
 	var monthEntries = _.flatten ( _.map(data, function(x) { return x.data; }) )
-	var monthAvgs = _.map(monthEntries, function(x) { return parseFloat(x.ka); })
+	//var monthAvgs = _.map(monthEntries, function(x) { return parseFloat(x.ka); })
 
-	var chart = d3.select("body").append("div")
+	var chart = d3.select("#d3chart").append("div")
     	.attr("class", "chart");
 	var x = d3.scale.linear()
     	.domain([d3.min(monthAvgs), d3.max(monthAvgs)])
@@ -12,6 +16,11 @@ $(document).ready(function() {
 		.data(monthAvgs)
 	.enter().append("div")
 		.style("width", x)
+		.style("background",
+			function(d) {
+				var red = Math.max(0, Math.floor(d)*10);
+				return d3.rgb(red, 0, Math.max(0, 100-red));
+			} )
 		.text(function(d) { return d; });
 
 	$('#mybutton').click(function() {
@@ -19,6 +28,9 @@ $(document).ready(function() {
 		circle.style("fill", "steelblue");
 		circle.attr("cy", 90);
 		circle.attr("r", 30);
+//		for (var i = 0; i < monthAvgs.length; i++) {
+//			monthAvgs[i] = monthAvgs[i] / 2;
+//		}
 	})
 	
 });
