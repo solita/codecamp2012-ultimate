@@ -34,3 +34,16 @@
 	position: absolute;
 	bottom: 0;
 }
+
+#info {
+	float: left;
+	margin-top: 5px;
+	font-size: 0.6em;
+	width: 100%;
+}
+
+#info .month {
+	float: left;
+	border-right: 1px solid red;
+	width: 8%;
+}
