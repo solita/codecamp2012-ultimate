@@ -14,14 +14,14 @@
 	float: right;
 	width: 40px;
 	margin-right: 2px;
-	background-color: red; 
+	background-color: lightblue; 
 	position: relative;
 }
 
 .yearBar:hover,
 .yearBar.selected {
 	border: 1px solid gray;
-	background-color: #3CC;
+	background-color: #CCF;
 }
 
 .yearBar .temp {
