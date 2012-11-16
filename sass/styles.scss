@@ -146,35 +146,40 @@
 }
 
 .yearBars {
-	height: 15em;
+	height: 10em;
 	float: right;
+	position: relative;
+
+	.title {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
 }
 
 .yearBar {
-	float: left;
+	float: right;
 	width: 40px;
 	margin-right: 2px;
 	background-color: red; 
 	position: relative;
 
-	&:hover,
-	.selected {
+	&:hover, .selected {
 		border: 1px solid gray;
 		background-color: #3CC;
-
-		.temp {
-			display: block;
-			position: absolute;
-			bottom: 0;
-		}
 	}
 
 	.temp {
 		display: none;
 		font-size: 0.7em;
 	}
-}
 
+	&:hover .temp, .selected .temp {
+		display: block;
+		position: absolute;
+		bottom: 0;
+	}
+}
 
 /* ALL THE REST
 ----------------------------------------------------------------------------- */
