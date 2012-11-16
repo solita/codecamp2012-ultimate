@@ -1,0 +1,58 @@
+/*
+Syntax error: File to import not found or unreadable: compass/css3.
+              Load paths:
+                C:/work/codecamp/ultimate
+                C:/work/codecamp/ultimate/sass
+        on line 6 of sass/styles.scss
+
+1: /*!
+2:  * ajk's Hot New Template
+3:  * Made by ajk (ajk.fi)
+4:  */
+5: 
+6: @import "compass/css3";
+7: 
+8: // Frameless grid. Remove if don't need
+9: @import "partials/frameless";
+10: 
+11: 
+
+Backtrace:
+sass/styles.scss:6
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/import_node.rb:45:in `import'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:215:in `visit_import'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:98:in `visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/visitors/perform.rb:7:in `visit'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/tree/root_node.rb:20:in `render'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/engine.rb:315:in `_render'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/engine.rb:262:in `render'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:341:in `update_stylesheet'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:201:in `each'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/lib/sass/plugin/compiler.rb:299:in `block in watch'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/multi_listener.rb:86:in `call'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/multi_listener.rb:86:in `on_change'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/multi_listener.rb:95:in `block in initialize_adapter'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/adapters/polling.rb:55:in `call'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/adapters/polling.rb:55:in `poll'
+C:/tools/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.3/vendor/listen/lib/listen/adapters/polling.rb:31:in `block in start'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: compass/css3.\A               Load paths:\A                 C:/work/codecamp/ultimate\A                 C:/work/codecamp/ultimate/sass\A         on line 6 of sass/styles.scss\A \A 1: /*!\A 2:  * ajk's Hot New Template\A 3:  * Made by ajk (ajk.fi)\A 4:  */\A 5: \A 6: @import \"compass/css3\";\A 7: \A 8: // Frameless grid. Remove if don't need\A 9: @import \"partials/frameless\";\A 10: \A 11: "; }
