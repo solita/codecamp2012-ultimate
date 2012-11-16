@@ -4,14 +4,14 @@ function updateD3() {
 	var y = data[yearIndex];
 	var monthAvgs = _.map(y.data, function(x) { return parseFloat(x.ka); })
 	var monthEntries = _.flatten ( _.map(data, function(x) { return x.data; }) )
-	//var monthAvgs = _.map(monthEntries, function(x) { return parseFloat(x.ka); })
+	var allMonthAvgs = _.map(monthEntries, function(x) { return parseFloat(x.ka); })
 
 	$('#d3chart').empty();
 	var chart = d3.select("#d3chart").append("div")
-    	.attr("class", "chart");
+		.attr("class", "chart");
 	var x = d3.scale.linear()
-    	.domain([d3.min(monthAvgs), d3.max(monthAvgs)])
-    	.range(["0px", "420px"]);
+		.domain([d3.min(allMonthAvgs), d3.max(allMonthAvgs)])
+		.range(["0px", "420px"]);
 	chart.selectAll("div")
 		.data(monthAvgs)
 	.enter().append("div")
