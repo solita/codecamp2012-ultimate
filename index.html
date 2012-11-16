@@ -3,27 +3,32 @@
 <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="jquery.xdomainajax.js"></script>
 <script type="text/javascript" src="underscore-min.js"></script>
+<script type="text/javascript" src="transparency.min.js"></script>
 <script type="text/javascript" src="foo.js"></script>
 <script type="text/javascript" src="d3.v2.js"></script>
 <script type="text/javascript" src="d3test.js"></script>
 <script type="text/javascript" src="bar.js"></script>
-<link rel="stylesheet" type="text/css" href="bar.css" />
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
 <title>Ultimate</title>
 </head>
-<body>
-
-  <div id="d3chart" style="float:right;">
-    <h1>hi</h1>
-    <button id="mybutton" type="button">Do something</button>
-    <!--
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-      <circle cx="100" cy="50" r="4" stroke="black" stroke-width="2" fill="red"></circle>
-    </svg>-->
+<body class="no-grid">
+  <div id="info">
+    <div data-bind="data">
+      <div data-bind="month">
+        <div data-bind="day"></div>
+        <div data-bind="ka"></div>
+        <div data-bind="min"></div>
+        <div data-bind="max"></div>
+      </div>
+    </div>
   </div>
 
+ <div id="d3chart">
+   <h3>D3</h3>
+ </div>
 
-  <div id="data" style="display: none">
-    
+<div class="main" role="main"><div class="wrapper">
+  <div id="data" class="data">
   <div class="y1997"><div class="data">
   
     <meta content="HTML Tidy for Java (vers. 26 Sep 2004), see www.w3.org" name="generator">
@@ -91175,7 +91180,7 @@
       </tr>
     </tbody></table>
   
-</div></div><div class="m12"><div class="data"></div></div></div></div>
+</div></div><div class="m12"><div class="data"></div></div></div></div></div></div>
 
 
 </body></html>
