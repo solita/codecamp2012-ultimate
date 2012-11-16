@@ -1,6 +1,6 @@
 .yearBars {
-	height: 20em;
-	float: left;
+	height: 15em;
+	float: right;
 }
 
 .yearBar {
@@ -11,17 +11,19 @@
 	position: relative;
 }
 
-.yearBar:hover {
+.yearBar:hover,
+.yearBar.selected {
 	border: 1px solid gray;
 	background-color: #3CC;
 }
 
 .yearBar .temp {
 	display: none;
+	font-size: 0.7em;
 }
 .yearBar:hover .temp,
 .yearBar.selected .temp {
 	display: block;
 	position: absolute;
-	bottom: -1.05em;
+	bottom: 0;
 }
